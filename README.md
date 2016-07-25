@@ -1,2 +1,2 @@
-# chris-methods-test
+# testing methods
 editing my readme.....
