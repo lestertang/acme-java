@@ -10,6 +10,9 @@ before_install:
     - sudo add-apt-repository "deb https://download.srcclr.com/ubuntu stable/"
     - sudo apt-get update
     - sudo apt-get install srcclr -y
+    - which srcclr
+    - mkdir ~/.srcclr
     - touch ~/.srcclr/agent.yml
+    - chmod 0600 ~/.srcclr/agent.yml
 after_success:
     - srcclr scan
