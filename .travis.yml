@@ -6,6 +6,6 @@ jdk:
   - oraclejdk8
 
 before_install:
-    - curl -sSL https://srcclr.com/install | bash
+    - echo -ne 'Y' | curl -sSL https://srcclr.com/install | bash
 after_success:
     - srcclr scan
