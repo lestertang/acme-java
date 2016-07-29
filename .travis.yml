@@ -6,6 +6,8 @@ jdk:
   - oraclejdk8
 
 before_install:
-    - echo -ne 'Y' | curl -sSL https://srcclr.com/install | bash
-after_success:
-    - srcclr scan
+    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DF7DD7A50B746DD4
+    - sudo add-apt-repository "deb https://download.srcclr.com/ubuntu stable/"
+    - sudo apt-get update
+    - sudo apt-get install srcclr
+    - echo -ne $SRCCLR_ACTIVATE | srcclr activate
