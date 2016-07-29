@@ -10,4 +10,4 @@ before_install:
     - sudo add-apt-repository "deb https://download.srcclr.com/ubuntu stable/"
     - sudo apt-get update
     - sudo apt-get install srcclr
-    - echo -ne $SRCCLR_ACTIVATE | srcclr activate
+    - echo -ne "$SRCCLR_ACTIVATE\n" | srcclr activate
