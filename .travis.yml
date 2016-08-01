@@ -13,7 +13,7 @@ before_install:
     - sudo apt-get install srcclr -y
     
     ## Create an agent.yml configuration file and change the permissions (required for the agent to work)
-    - touch ~/.srcclr/agent.yml
+    - mkdir ~/.srcclr && touch ~/.srcclr/agent.yml
     - chmod 0600 ~/.srcclr/agent.yml
 
 
