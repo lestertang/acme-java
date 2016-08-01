@@ -4,9 +4,19 @@ language: java
 
 jdk:
   - oraclejdk8
+
 before_install:
+    ## Download the SourceClear agent deb package and install
     - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DF7DD7A50B746DD4
     - sudo add-apt-repository "deb https://download.srcclr.com/ubuntu stable/"
     - sudo apt-get update
-    - sudo apt-get install srcclr
-    - echo -ne "$SRCCLR_ACTIVATE\n" | srcclr activate
+    - sudo apt-get install srcclr -y
+    
+    ## Create an agent.yml configuration file and change the permissions (required for the agent to work)
+    - touch ~/.srcclr/agent.yml
+    - chmod 0600 ~/.srcclr/agent.yml
+
+
+## Place the scan command in "after_success" or whereever you prefer
+after_success:
+    - srcclr scan
