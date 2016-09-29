@@ -7,9 +7,4 @@ jdk:
 
 before_install:
     ## Download the SourceClear agent deb package and install
-    - curl https://download.sourceclear.com/ci | bash
-
-
-## Place the scan command in "after_success" or whereever you prefer
-after_success:
-    - srcclr scan
+    - curl -sSL https://download.sourceclear.com/ci.sh | bash | grep -F -q -e '0 vulnerable libraries' || exit(1)
