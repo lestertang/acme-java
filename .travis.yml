@@ -7,4 +7,4 @@ jdk:
 
 before_install:
     ## Download the SourceClear agent deb package and install
-    - curl -sSL https://download.sourceclear.com/ci.sh | bash | grep -F -q -e '7 vulnerable libraries' || exit 1
+    - curl -sSL https://download.sourceclear.com/ci.sh | bash | awk 'BEGIN {code = 1} {print $0} /SourceClear found no component data|0 vulnerable libraries/ {code = 0} END {exit code}'
