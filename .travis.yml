@@ -6,4 +6,4 @@ jdk:
   - oraclejdk8
 addons:
     srcclr:
-        debug: true
+        debug: false
