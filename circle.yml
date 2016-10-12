@@ -1,3 +1,0 @@
-test:
-  post:
-    - curl https://download.sourceclear.com/ci | bash
