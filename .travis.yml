@@ -1,7 +1,8 @@
 sudo: required
 dist: trusty
 language: java
-
+addons:
+  srcclr: true
 jdk:
   - oraclejdk8
 script:
